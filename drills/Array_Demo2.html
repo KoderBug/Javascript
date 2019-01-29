@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <style>
+			div{color:white;font-size:1.5em;font-weight:bold;
+			text-align:center;height:100px;width:300px;background-color:green;}
+			button({font-size:1.5em;font-weight:bold;height:75px:width:100px;}
+		</style>
+	</head>
+	<body>
+		<h1 id="colors">Click button for colors!</h1>
+		<div>Green</div><br>
+		<div>Green</div><br>
+		<div>Green</div><br>
+		<div>Green</div><br>
+		<div>Green</div><br><br>
+		<button class="btn" onclick="up()">Red!</button>
+		<button class="btn" onclick="down()">Blue!</button>
+		
+		<script>
+		var i=0;
+		var j=0;
+		var divs = document.getElementsByTagName('div');
+		var btns = document.getElementsByClassName('btn');
+		function up() {
+			if (i < divs.length) {
+				divs[i].style.backgroundColor = "red";
+				divs[i].innerHTML = "Red";
+				btns[0].innerHTML = "Done";
+				i++;
+			}
+		window.setTimeout(up, 150);
+		};
+		
+		function down() {
+			if (j < divs.length) {
+				divs[j].style.backgroundColor = "blue";
+				divs[j].innerHTML = "Blue";
+				btns[1].innerHTML = "Done";
+				j++;
+			}
+		window.setTimeout(down, 150);
+		};
+		
+		</script>
+	</body>
+</html>

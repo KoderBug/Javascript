@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Pizza Menu</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta content="width=device-width,initial-scale=1.0" name="viewport">
+        <link rel="stylesheet" href="./css/pizza_style.css">
+        
+        <!--BootStrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">      
+    </head>
+	<body>
+
+    <!--Header-->
+        <div class="jumbotron jumbotron-fluid text-center" style="background-color: #800707;">    
+            <div class="display-4"> 
+                <img src="./images/DogEatPizza.jpg" class = "pull-left" alt="" height="150" width="150">
+            </div> 
+            <h1 class="display-4 font-weight-bold">World's Best Pizza</h1>             
+            <p class="lead font-weight-bold">So good you'll slap yo' Mama (and yo' doggo)!</p>   
+              
+        </div>
+    <!--/Header-->
+
+    <!--Menus-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h2>Pizza Size:</h2>
+
+                    <form>
+                        <input type="radio" name="size" value="Personal Pizza">Personal<br>
+                        <input type="radio" name="size" value="Medium Pizza">Medium<br>
+                        <input type="radio" name="size" value="Large Pizza" checked>Large<br>
+                        <input type="radio" name="size" value="XLarge Pizza">Extra Large
+                    </form> 
+                </div>
+                <div class="col-sm">
+                    <h2>Meats:</h2>
+                    <span>One meat included, </span><br>
+                    <span>additional items $1.00 each </span><br>
+
+                    <form>
+                        <input type="checkbox" name="meats" value="Pepperoni">Pepperoni<br>
+                        <input type="checkbox" name="meats" value="Sausage">Sausage<br>
+                        <input type="checkbox" name="meats" value="Bacon">Canadian Bacon<br>
+                        <input type="checkbox" name="meats" value="Ground Beef">Ground Beef<br>
+                        <input type="checkbox" name="meats" value="Anchovy">Anchovy<br>
+                        <input type="checkbox" name="meats" value="Chicken">Chicken
+                    </form> 
+                </div>
+                <div class="col-sm">
+                    <h2>Cheese:</h2>
+                    <span>Extra cheese, </span><br>
+                    <span>$3.00 any size pizza </span><br>
+
+                    <form>
+                        <input type="radio" name="cheese" value="Regular Cheese" checked>Regular Cheese<br>
+                        <input type="radio" name="cheese" value="No Cheese">None<br>
+                        <input type="radio" name="cheese" value="Extra Cheese">Extra Cheese
+                    </form> 
+                </div>
+            </div>                
+
+            <div class="row">
+                <div class="col-sm">
+                    <h2>Crust:</h2>
+                    <span>Cheese Stuffed Crust, </span><br>
+                    <span>$3.00 additional </span><br>
+
+                    <form>
+                        <input type="radio" name="crust" value="Plain Crust" checked>Plain Crust<br>
+                        <input type="radio" name="crust" value="Garlic Butter Crust">Garlic Butter Crust<br>
+                        <input type="radio" name="crust" value="Cheese Stuffed Crust">Cheese Stuffed Crust<br>
+                        <input type="radio" name="crust" value="Spicy Crust">Spicy Crust<br>
+                        <input type="radio" name="crust" value="House Special Crust">House Special
+                    </form>
+                </div>
+
+                <div class="col-sm">
+                    <h2>Sauce:</h2>
+
+                    <form>
+                        <input type="radio" name="sauce" value="Marinara Sauce" checked>Marinara Sauce`<br>
+                        <input type="radio" name="sauce" value="White Sauce">White Sauce<br>
+                        <input type="radio" name="sauce" value="Barbecue Sauce">Barbecue Sauce<br>
+                        <input type="radio" name="sauce" value="No Sauce">No Sauce
+                    </form>
+                </div>
+
+                <div class="col-sm">
+                    <h2>Veggies:</h2>
+                    <span>One veggie included, </span><br>
+                    <span>additional items $1.00 each </span><br>
+
+                    <form>
+                        <input type="checkbox" name="veggies" value="Tomatoes">Tomatoes<br>
+                        <input type="checkbox" name="veggies" value="Onions">Onions<br>
+                        <input type="checkbox" name="veggies" value="Olives">Olives<br>
+                        <input type="checkbox" name="veggies" value="Green Peppers">Green Peppers<br>
+                        <input type="checkbox" name="veggies" value="Mushrooms">Mushrooms<br>
+                        <input type="checkbox" name="veggies" value="Pineapple">Pineapple<br>
+                        <input type="checkbox" name="veggies" value="Spinach">Spinach<br>
+                        <input type="checkbox" name="veggies" value="Jalapeno">Jalapeno
+                    </form> 
+                </div>
+            </div>
+
+            <!--Order & Cancel Buttons-->
+            <div class="row">
+                <div class="button-container">                    
+                    <input type="button" onclick="Calc()" value="Order">
+                </div>
+                <div class="button-container">
+                    <input type="button" onclick="ClearScreen()" value="Cancel">                
+                </div>
+            </div>
+            
+            <!--END Order & Cancel Buttons-->
+        <!--END Menus-->
+        <!--Create Receipt-->
+        <div id="receipt">
+            <div class="row">
+                <div id="items" class="receipt-container">                    
+                    <h3>Pizza Order:</h3>
+                    <p id=receiptItems>pizzaText</p>                   
+                </div>
+                <div id="amount" class="receipt-container">
+                    <h3>Subtotal:</h3>
+                    <p id=receiptAmounts>amountText</p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--End Create Receipt-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <script src="./js/pizza_menu.js"></script>
+    </body>
+    
+</html>
